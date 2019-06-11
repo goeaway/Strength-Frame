@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Exercise_App.API.Presentation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class WorkoutController : Controller
     {
         private readonly IMediator _mediator;
