@@ -21,7 +21,11 @@ namespace Exercise_App.API.Application.Queries.Workouts
 
         public Task<WorkoutDTO> Handle(GetWorkoutRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                var workout = _repository.Get(request.ID);
+                return new WorkoutDTO {ID = workout.ID, Name = workout.Name};
+            });
         }
     }
 }

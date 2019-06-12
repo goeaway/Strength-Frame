@@ -20,7 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Exercise-App.API.Application\Exercise-App.API.Application.csproj" />
-    <ProjectReference Include="..\Exercise-App.API.Data\Exercise-App.API.Data.csproj" />
+    <ProjectReference Include="..\Exercise-App.API.Infrastructure\Exercise-App.API.Infrastructure.csproj" />
+    <ProjectReference Include="..\Exercise-App.API.Persistence\Exercise-App.API.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

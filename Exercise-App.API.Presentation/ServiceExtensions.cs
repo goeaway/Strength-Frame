@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Exercise_App.API.Application.Abstractions;
 using Exercise_App.API.Application.Models.Entities;
-using Exercise_App.API.Data.Repositories;
+using Exercise_App.API.Persistence.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 

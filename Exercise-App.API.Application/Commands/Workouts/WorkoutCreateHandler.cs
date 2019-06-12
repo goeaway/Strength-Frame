@@ -20,7 +20,12 @@ namespace Exercise_App.API.Application.Commands.Workouts
 
         public Task<WorkoutCreateResponse> Handle(WorkoutCreateRequest request, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                var workout = new Workout { Created = DateTime.Now, Name = request.DTO.Name };
+                _repository.Insert(workout);
+                return new WorkoutCreateResponse();
+            });
         }
     }
 }

@@ -45,15 +45,15 @@ namespace Exercise_App.API.Presentation.Controllers
         }
 
         [HttpPatch]
-        public Task<> Update(ExerciseDTO exercise)
+        public Task<ExerciseUpdateResponse> Update(ExerciseDTO exercise)
         {
-
+            return _mediator.Send(new ExerciseUpdateRequest(exercise));
         }
 
         [HttpDelete("{id}")]
-        public Task<> Delete(int id)
+        public Task<ExerciseDeleteResponse> Delete(int id)
         {
-
+            return _mediator.Send(new ExerciseDeleteRequest(id));
         }
     }
 }

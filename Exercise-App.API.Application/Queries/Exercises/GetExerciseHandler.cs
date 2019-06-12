@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Exercise_App.API.Application.Models.DTO;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Exercise_App.API.Application.Queries.Exercises
 {
-    public class GetExerciseHandler : IRequestHandler<GetExerciseRequest, GetExerciseResponse>
+    public class GetExerciseHandler : IRequestHandler<GetExerciseRequest, ExerciseDTO>
     {
-        public Task<GetExerciseResponse> Handle(GetExerciseRequest request, CancellationToken cancellationToken)
+        public Task<ExerciseDTO> Handle(GetExerciseRequest request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
