@@ -35,11 +35,6 @@ namespace Exercise_App.API.Persistence.Repositories
             }
         }
 
-        public Task DeleteAsync(int id)
-        {
-            return Task.Run(() => Delete(id));
-        }
-
         public T Get(int id)
         {
             try
@@ -64,16 +59,6 @@ namespace Exercise_App.API.Persistence.Repositories
             }
         }
 
-        public Task<IEnumerable<T>> GetAllAsync()
-        {
-            return Task.Run(() => GetAll());
-        }
-
-        public Task<T> GetAsync(int id)
-        {
-            return Task.Run(() => Get(id));
-        }
-
         public void Insert(T entity)
         {
             try
@@ -88,11 +73,6 @@ namespace Exercise_App.API.Persistence.Repositories
             }
         }
 
-        public Task InsertAsync(T entity)
-        {
-            return Task.Run(() => Insert(entity));
-        }
-
         public void Update(T entity)
         {
             try
@@ -104,11 +84,6 @@ namespace Exercise_App.API.Persistence.Repositories
             {
                 throw new RepositoryException($"Exception occured when trying to update {typeof(T).Name}", e);
             }
-        }
-
-        public Task UpdateAsync(T entity)
-        {
-            return Task.Run(() => Update(entity));
         }
     }
 }
