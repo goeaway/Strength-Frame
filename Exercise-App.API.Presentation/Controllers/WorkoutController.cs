@@ -20,31 +20,31 @@ namespace Exercise_App.API.Presentation.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet]
+        [HttpGet("get")] 
         public Task<IEnumerable<WorkoutDTO>> Get()
         {
             return _mediator.Send(new GetWorkoutsRequest());
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("get/{id}")]
         public Task<WorkoutDTO> Get(int id)
         {
             return _mediator.Send(new GetWorkoutRequest(id));
         }
 
-        [HttpPost]
+        [HttpPost("create")]
         public Task<WorkoutCreateResponse> Create(WorkoutDTO workout)
         {
             return _mediator.Send(new WorkoutCreateRequest(workout));
         }
 
-        [HttpPatch]
+        [HttpPatch("update")]
         public Task<WorkoutUpdateResponse> Update(WorkoutDTO workout)
         {
             return _mediator.Send(new WorkoutUpdateRequest(workout));
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete("delete/{id}")]
         public Task<WorkoutDeleteResponse> Delete(int id)
         {
             return _mediator.Send(new WorkoutDeleteRequest(id));
